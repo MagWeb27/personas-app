@@ -19,25 +19,18 @@
                         <th class="py-2 px-4 border-b">Codigo</th>
                         <th class="py-2 px-4 border-b">Comuna</th>
                         <th class="py-2 px-4 border-b">Municipio</th>
+                        <th class="py-2 px-4 border-b">Acciones</th>
                     </tr>
                 </thead>
                 <tbody>
-                    {{-- @foreach ($comunas as $comuna)
-                        
-                    @endforeach --}}
+                    @foreach ($comunas as $comuna)
                     <tr>
-                        <td class="py-2 px-4 border-b">1</td>
-                        <td class="py-2 px-4 border-b">John Doe</td>
-                        <td class="py-2 px-4 border-b">john.doe@example.com</td>
-                        <!-- Agrega más celdas según sea necesario -->
+                        <th scope="row">{{ $comuna->comu_codi }}</th>
+                        <td class="py-2 px-4 border-b">{{ $comuna->comu_nomb }}</td>
+                        <td class="py-2 px-4 border-b">{{ $comuna->muni_codi }}</td>
+                        <td><span>Acciones</span></td>
                     </tr>
-                    <tr>
-                        <td class="py-2 px-4 border-b">2</td>
-                        <td class="py-2 px-4 border-b">Jane Doe</td>
-                        <td class="py-2 px-4 border-b">jane.doe@example.com</td>
-                        <!-- Agrega más celdas según sea necesario -->
-                    </tr>
-                    <!-- ... más filas ... -->
+                    @endforeach 
                 </tbody>
             </table>
         </div>
