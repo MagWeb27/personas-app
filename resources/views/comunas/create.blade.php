@@ -25,9 +25,13 @@
                     @endforeach
                 </select>
             </div>
-            <button type="submit" class="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-md">
+            <button type="submit" class="bg-blue-400 hover:bg-blue-500 text-white py-2 px-4 rounded-md">
                 Guardar
             </button>
+
+            <a href="{{ route('comunascrud') }}" type="submit" class="bg-red-400 hover:bg-red-500 text-white py-2 px-4 rounded-md">
+                Cancelar
+            </a>
         </form>
     </div>
 @endsection

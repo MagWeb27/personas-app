@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Comuna extends Model
 {
     protected $fillable = [
+        'comu_codi',
         'comu_nomb',
         'muni_codi'
     ];

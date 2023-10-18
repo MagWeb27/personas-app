@@ -7,11 +7,18 @@
 @section('contenido')
     <div class="overflow-x-auto">
         <div class="flex flex-col gap-4 justify-center mx-auto">
+            @if (session('mensaje'))
+                <div class="bg-green-500 text-white font-medium text-lg h-[45px] rounded flex items-center justify-between px-4">
+                    <span>{{ session('mensaje') }}</span>
+                    <button onclick="this.parentElement.style.display='none'" class="font-medium text-white">&times;</button>
+                </div>
+            @endif
             <div class="flex justify-start mb-2 ml-20">
                 <p class="font-medium text-4xl drop-shadow-lg">Lista de comunas</p>
             </div>
             <div class="flex justify-start ml-20">
-                <a href="{{ route('crearComuna') }}" class="flex items-center mr-2 w-[80px] text-white p-2 mt-2 rounded bg-green-400 hover:bg-green-500 shadow-lg">
+                <a href="{{ route('crearComuna') }}"
+                    class="flex items-center mr-2 w-[80px] text-white p-2 mt-2 rounded bg-green-400 hover:bg-green-500 shadow-lg">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                         stroke="currentColor" class="w-6 h-6">
                         <path stroke-linecap="round" stroke-linejoin="round"
@@ -45,9 +52,12 @@
                                     </svg>
                                     Editar
                                 </a>
-                                <form action="#" method="POST" class="" novalidate>
+                                <form action="{{ route('comunas.destroy', ['comuna' => $comuna->comu_codi]) }}"
+                                    method="POST">
+                                    @method('delete')
                                     @csrf
-                                    <button type="submit" class="flex items-center mr-2 w-[90px] text-white p-2 mt-2 rounded bg-red-400 hover:bg-red-500 shadow-lg">
+                                    <button type="submit"
+                                        class="flex items-center mr-2 w-[90px] text-white p-2 mt-2 rounded bg-red-400 hover:bg-red-500 shadow-lg">
                                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                             stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                                             <path stroke-linecap="round" stroke-linejoin="round"
@@ -57,7 +67,6 @@
                                     </button>
                                 </form>
                             </td>
-
                         </tr>
                     @endforeach
                 </tbody>

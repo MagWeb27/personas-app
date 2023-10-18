@@ -35,17 +35,12 @@ class ComunaController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'name' => 'required|max:30',
-            'municipio' => 'required|max:30',
-        ]);
 
         Comuna::create([
             'comu_nomb' => $request->name,
             'muni_codi' =>$request->municipio
         ]);
 
-        // Redirigir a la lista de comunas o a donde desees
         return redirect()->route('comunascrud');
     }
 
@@ -76,8 +71,16 @@ class ComunaController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy($comu_codi)
     {
-        //
+        $comuna = Comuna::find($comu_codi);
+        $comuna->delete();
+
+        $comunas = DB::table('tb_comuna')
+            ->join('tb_municipio', 'tb_comuna.muni_codi', '=', 'tb_municipio.muni_codi')
+            ->select('tb_comuna.*', 'tb_municipio.muni_nomb')
+            ->get();
+        session()->flash('mensaje', 'El campo se eliminó correctamente.');
+        return view('comunas.index', ['comunas' => $comunas]);
     }
 }

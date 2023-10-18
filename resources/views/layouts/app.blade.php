@@ -12,10 +12,6 @@
 
 <body class="bg-gray-100">
     <header class="p-5 border-b bg-gray-800 shadow">
-        <div class="container mx-auto flex justify-between items-center">
-
-        </div>
-
         <nav>
             <div class="container mx-auto">
                 <div class="flex items-center justify-between">
