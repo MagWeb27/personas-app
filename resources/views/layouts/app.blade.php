@@ -19,7 +19,6 @@
         <nav>
             <div class="container mx-auto">
                 <div class="flex items-center justify-between">
-                    <!-- Logo o Marca -->
                     <div class="text-white">
                         <a href="/">
                             <h1 class="text-3xl font-bold text-white">

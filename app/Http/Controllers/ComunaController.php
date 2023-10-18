@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Comuna;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 
 class ComunaController extends Controller
 {
@@ -21,7 +24,10 @@ class ComunaController extends Controller
      */
     public function create()
     {
-        //
+        $municipios = DB::table('tb_municipio')
+            ->orderBy('muni_nomb')
+            ->get();
+        return view('comunas.create', ['municipios' => $municipios]);
     }
 
     /**
@@ -29,7 +35,18 @@ class ComunaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name' => 'required|max:30',
+            'municipio' => 'required|max:30',
+        ]);
+
+        Comuna::create([
+            'comu_nomb' => $request->name,
+            'muni_codi' =>$request->municipio
+        ]);
+
+        // Redirigir a la lista de comunas o a donde desees
+        return redirect()->route('comunascrud');
     }
 
     /**
