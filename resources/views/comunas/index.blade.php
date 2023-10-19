@@ -43,7 +43,8 @@
                             <td class="py-2 px-4 border-b text-center">{{ $comuna->comu_nomb }}</td>
                             <td class="py-2 px-4 border-b text-center">{{ $comuna->muni_codi }}</td>
                             <td class="py-2 px-4 border-b flex items-center justify-center">
-                                <a href="#"
+
+                                <a href="{{ route('comunas.edit', ['comuna' => $comuna->comu_codi]) }}"
                                     class="flex items-center mr-2 w-[80px] text-white p-2 mt-2 rounded bg-orange-400 hover:bg-orange-500 shadow-lg">
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                         stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
@@ -52,6 +53,7 @@
                                     </svg>
                                     Editar
                                 </a>
+
                                 <form action="{{ route('comunas.destroy', ['comuna' => $comuna->comu_codi]) }}"
                                     method="POST">
                                     @method('delete')
