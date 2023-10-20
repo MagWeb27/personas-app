@@ -24,4 +24,9 @@ class Departamento extends Model
     {
         return $this->hasOne(Pais::class);
     }
+
+    public function municipio()
+    {
+        return $this->hasOne(Municipío::class);
+    }
 }

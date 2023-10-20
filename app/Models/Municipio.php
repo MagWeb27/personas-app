@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Municipío extends Model
+class Municipio extends Model
 {
     use HasFactory;
 
@@ -22,5 +22,10 @@ class Municipío extends Model
     public function comuna()
     {
         return $this->hasMany(Comuna::class);
+    }
+
+    public function departamento()
+    {
+        return $this->hasMany(Departamento::class);
     }
 }

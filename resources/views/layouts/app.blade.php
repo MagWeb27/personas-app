@@ -31,7 +31,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="#" class="text-white hover:bg-slate-500 transition duration-100 rounded">
+                            <a href="{{ route('municipios.index') }}" class="text-white hover:bg-slate-500 transition duration-100 rounded">
                                 Municipios
                             </a>
                         </li>

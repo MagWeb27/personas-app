@@ -30,7 +30,7 @@ Route::delete('/comunas/{comuna}', [ComunaController::class, 'destroy'])->name('
 Route::put('/comunas/{comuna}', [ComunaController::class, 'update'])->name('comunas.update');
 Route::get('/comunas/{comuna}/edit', [ComunaController::class, 'edit'])->name('comunas.edit');
 
-//RUTAS DE MUNICIPIOS
+//RUTAS DE DEPARTAMENTOS
 Route::get('/departamentos', [DepartamentoController::class, 'index'])->name('departamentos.index');
 Route::get('/departamentos/create', [DepartamentoController::class, 'create'])->name('departamentos.create');
 
@@ -40,3 +40,5 @@ Route::delete('/departamentos/{departamento}', [DepartamentoController::class, '
 Route::put('/departamentos/{departamento}', [DepartamentoController::class, 'update'])->name('departamentos.update');
 Route::get('/departamentos/{departamento}/edit', [DepartamentoController::class, 'edit'])->name('departamentos.edit');
 
+//RUTAS DE MUNICIPIOS
+Route::get('/municipios', [MunicipioController::class, 'index'])->name('municipios.index');

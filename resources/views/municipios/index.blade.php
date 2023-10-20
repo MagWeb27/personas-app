@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('titulo')
-    departamentos
+    municipios
 @endsection
 
 @section('contenido')
@@ -15,10 +15,10 @@
                 </div>
             @endif
             <div class="flex justify-start mb-2 ml-20">
-                <p class="font-medium text-4xl drop-shadow-lg">Lista de Departamentos</p>
+                <p class="font-medium text-4xl drop-shadow-lg">Lista de Municipios</p>
             </div>
             <div class="flex justify-start ml-20">
-                <a href="{{ route('departamentos.create') }}"
+                <a href="#"
                     class="flex items-center mr-2 w-[80px] text-white p-2 mt-2 rounded bg-green-400 hover:bg-green-500 shadow-lg">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                         stroke="currentColor" class="w-6 h-6">
@@ -32,20 +32,20 @@
                 <thead class="bg-slate-400">
                     <tr class="text-white">
                         <th class="py-2 px-4 border-b">Codigo</th>
+                        <th class="py-2 px-4 border-b">Municipio</th>
                         <th class="py-2 px-4 border-b">Departamento</th>
-                        <th class="py-2 px-4 border-b">Pais</th>
                         <th class="py-2 px-4 border-b">Acciones</th>
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($departamentos as $departamento)
+                    @foreach ($municipios as $municipio)
                         <tr>
-                            <th scope="row">{{ $departamento->depa_codi }}</th>
-                            <td class="py-2 px-4 border-b text-center">{{ $departamento->depa_nomb }}</td>
-                            <td class="py-2 px-4 border-b text-center">{{ $departamento->pais_codi }}</td>
+                            <th scope="row">{{ $municipio->muni_codi }}</th>
+                            <td class="py-2 px-4 border-b text-center">{{ $municipio->muni_nomb }}</td>
+                            <td class="py-2 px-4 border-b text-center">{{ $municipio->depa_codi }}</td>
                             <td class="py-2 px-4 border-b flex items-center justify-center">
 
-                                <a href="{{ route('departamentos.edit', ['departamento' => $departamento->depa_codi]) }}"
+                                <a href="#"
                                     class="flex items-center mr-2 w-[80px] text-white p-2 mt-2 rounded bg-orange-400 hover:bg-orange-500 shadow-lg">
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                         stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
@@ -55,9 +55,7 @@
                                     Editar
                                 </a>
 
-                                <form
-                                    action="{{ route('departamentos.destroy', ['departamento' => $departamento->depa_codi]) }}"
-                                    method="POST">
+                                <form action="#" method="POST">
                                     @method('delete')
                                     @csrf
                                     <button type="submit"
