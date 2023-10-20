@@ -33,11 +33,11 @@ class PaisController extends Controller
      */
     public function store(Request $request)
     {
-            Pais::create([
+        Pais::create([
             'pais_codi' => $request->codigo,
             'pais_nomb' => $request->name,
             'pais_capi' => $request->capital,
-            'depa_codi' =>$request->departamento
+            'depa_codi' => $request->departamento
         ]);
 
         session()->flash('mensaje', 'Se ha creado un nuevo registro correctamente.');
@@ -55,17 +55,32 @@ class PaisController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit($pais_codi)
     {
-        //
+        $pais = Pais::find($pais_codi);
+        $departamentos = DB::table('tb_departamento')
+            ->orderBy('depa_nomb')
+            ->get();
+        return view('paises.edit', ['pais' => $pais, 'departamentos' => $departamentos]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, string $pais_codi)
     {
-        //
+        $pais = pais::find($pais_codi);
+        $pais->pais_nomb = $request->name;
+        $pais->pais_codi = $request->codigo;
+        $pais->pais_capi = $request->capital;
+        $pais->save();
+
+        $pais = DB::table('tb_pais')
+            ->join('tb_departamento', 'tb_pais.pais_codi', '=', 'tb_pais.pais_codi')
+            ->select('tb_pais.*', 'tb_departamento.depa_nomb')
+            ->get();
+        session()->flash('mensaje', 'El campo se actualizo correctamente.');
+        return view('paises.index', ['pais' => $pais]);
     }
 
     /**

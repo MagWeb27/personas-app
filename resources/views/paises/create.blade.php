@@ -25,7 +25,7 @@
             <div class="mb-4 w-[60%]">
                 <label for="capital" class="block text-sm font-medium text-gray-600">Codigo de Capital</label>
                 <input type="text" id="capital" name="capital" required placeholder="Ingrese la capital (En numero)..." class="mt-1 p-2 w-full border rounded-md" id="id"
-                    aria-describedby="codigoHelp" name="id">
+                    aria-describedby="codigoHelp">
             </div>
 
             <div class="mb-4 w-[60%]">

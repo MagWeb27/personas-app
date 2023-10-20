@@ -57,3 +57,4 @@ Route::get('/paises', [PaisController::class, 'index'])->name('paises.index');
 Route::get('/paises/create', [PaisController::class, 'create'])->name('paises.create');
 
 Route::post('/paises/create.store', [PaisController::class, 'store'])->name('paises.store');
+
