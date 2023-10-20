@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ComunaController;
+use App\Http\Controllers\MunicipioController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,6 +19,7 @@ Route::get('/', function () {
     return view('index');
 });
 
+//RUTAS DE COMUNAS
 
 Route::get('/comunas', [ComunaController::class, 'index'])->name('comunascrud');
 Route::get('/comunas/create', [ComunaController::class, 'create'])->name('crearComuna');
@@ -28,3 +30,6 @@ Route::put('/comunas/{comuna}', [ComunaController::class, 'update'])->name('comu
 
 Route::get('/comunas/{comuna}/edit', [ComunaController::class, 'edit'])->name('comunas.edit');
 
+//RUTAS DE MUNICIPIOS
+
+Route::get('/municipios', [MunicipioController::class, 'index'])->name('municipios.index');
