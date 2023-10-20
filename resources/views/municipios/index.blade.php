@@ -55,7 +55,7 @@
                                     Editar
                                 </a>
 
-                                <form action="#" method="POST">
+                                <form action="{{ route('municipios.destroy', ['municipio' => $municipio->muni_codi]) }}" method="POST">
                                     @method('delete')
                                     @csrf
                                     <button type="submit"
