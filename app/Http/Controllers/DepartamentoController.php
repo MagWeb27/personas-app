@@ -81,8 +81,16 @@ class DepartamentoController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy($depa_codi)
     {
-        //
+        $departamento = Departamento::find($depa_codi);
+        $departamento->delete();
+
+        $departamentos = DB::table('tb_departamento')
+            ->join('tb_pais', 'tb_departamento.pais_codi', '=', 'tb_pais.pais_codi')
+            ->select('tb_departamento.*', 'tb_pais.pais_nomb')
+            ->get();
+        session()->flash('mensaje', 'El campo se eliminó correctamente.');
+        return view('departamentos.index', ['departamentos' => $departamentos]);
     }
 }
