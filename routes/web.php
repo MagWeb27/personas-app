@@ -3,6 +3,7 @@
 use App\Http\Controllers\ComunaController;
 use App\Http\Controllers\DepartamentoController;
 use App\Http\Controllers\MunicipioController;
+use App\Models\Municipio;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -42,3 +43,6 @@ Route::get('/departamentos/{departamento}/edit', [DepartamentoController::class,
 
 //RUTAS DE MUNICIPIOS
 Route::get('/municipios', [MunicipioController::class, 'index'])->name('municipios.index');
+Route::get('/municipios/create', [MunicipioController::class, 'create'])->name('municipios.create');
+
+Route::post('/municipios/create.store', [MunicipioController::class, 'store'])->name('municipios.store');
