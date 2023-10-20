@@ -17,10 +17,21 @@ class Pais extends Model
 
     protected $table = 'tb_pais';
     protected $primaryKey = 'pais_codi';
+    public $incrementing = false;
     public $timestamps = false;
 
     public function departamento()
     {
         return $this->hasMany(Departamento::class);
+    }
+
+    public function municipio()
+    {
+        return $this->hasMany(Municipio::class);
+    }
+
+    public function comuna()
+    {
+        return $this->hasMany(Comuna::class);
     }
 }

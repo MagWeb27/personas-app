@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Pais;
 use Illuminate\Http\Request;
 
 class PaisController extends Controller
@@ -11,7 +12,8 @@ class PaisController extends Controller
      */
     public function index()
     {
-        //
+        $pais = Pais::all();
+        return view('paises.index', ['pais' => $pais]);
     }
 
     /**

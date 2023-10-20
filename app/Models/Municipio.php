@@ -28,4 +28,9 @@ class Municipio extends Model
     {
         return $this->hasMany(Departamento::class);
     }
+
+    public function pais()
+    {
+        return $this->hasOne(Pais::class);
+    }
 }

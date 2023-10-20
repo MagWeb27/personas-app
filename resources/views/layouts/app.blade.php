@@ -41,7 +41,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="#" class="text-white hover:bg-slate-500 transition duration-100 rounded">
+                            <a href="{{ route('pais.index') }}" class="text-white hover:bg-slate-500 transition duration-100 rounded">
                                 País
                             </a>
                         </li>

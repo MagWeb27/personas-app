@@ -3,6 +3,7 @@
 use App\Http\Controllers\ComunaController;
 use App\Http\Controllers\DepartamentoController;
 use App\Http\Controllers\MunicipioController;
+use App\Http\Controllers\PaisController;
 use App\Models\Municipio;
 use Illuminate\Support\Facades\Route;
 
@@ -50,3 +51,6 @@ Route::delete('/municipios/{municipio}', [MunicipioController::class, 'destroy']
 
 Route::put('/municipios/{municipio}', [MunicipioController::class, 'update'])->name('municipios.update');
 Route::get('/municipios/{municipio}/edit', [MunicipioController::class, 'edit'])->name('municipios.edit');
+
+//RUTAS DE PAIS
+Route::get('/pais', [PaisController::class, 'index'])->name('pais.index');

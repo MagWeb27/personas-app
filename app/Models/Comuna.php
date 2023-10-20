@@ -22,4 +22,9 @@ class Comuna extends Model
     {
         return $this->hasOne(Municipio::class);
     }
+
+    public function pais()
+    {
+        return $this->hasOne(Pais::class);
+    }
 }
