@@ -58,3 +58,5 @@ Route::get('/paises/create', [PaisController::class, 'create'])->name('paises.cr
 
 Route::post('/paises/create.store', [PaisController::class, 'store'])->name('paises.store');
 
+Route::put('/paises/{pais}', [PaisController::class, 'update'])->name('paises.update');
+Route::get('/paises/{pais}/edit', [PaisController::class, 'edit'])->name('paises.edit');
