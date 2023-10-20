@@ -52,17 +52,30 @@ class DepartamentoController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit($depa_codi)
     {
-        //
+        $departamento = Departamento::find($depa_codi);
+        $pais = DB::table('tb_pais')
+            ->orderBy('pais_nomb')
+            ->get();
+        return view('departamentos.edit', ['departamento' => $departamento, 'pais' => $pais]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, string $depa_codi)
     {
-        //
+        $departamento = departamento::find($depa_codi);
+        $departamento->depa_nomb = $request->name;
+        $departamento->depa_codi = $request->departamento;
+        $departamento->save();
+
+        $departamentos = DB::table('tb_departamento')
+            ->join('tb_pais', 'tb_departamento.pais_codi', '=', 'tb_pais.pais_codi')
+            ->select('tb_departamento.*', 'tb_pais.pais_nomb')
+            ->get();
+        return view('departamentos.index', ['departamentos' => $departamentos]);
     }
 
     /**

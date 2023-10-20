@@ -27,8 +27,8 @@ Route::get('/comunas/create', [ComunaController::class, 'create'])->name('crearC
 
 Route::post('/comunas/create.store', [ComunaController::class, 'store'])->name('guardarComuna');
 Route::delete('/comunas/{comuna}', [ComunaController::class, 'destroy'])->name('comunas.destroy');
-Route::put('/comunas/{comuna}', [ComunaController::class, 'update'])->name('comunas.update');
 
+Route::put('/comunas/{comuna}', [ComunaController::class, 'update'])->name('comunas.update');
 Route::get('/comunas/{comuna}/edit', [ComunaController::class, 'edit'])->name('comunas.edit');
 
 //RUTAS DE MUNICIPIOS
@@ -37,4 +37,9 @@ Route::get('/departamentos', [DepartamentoController::class, 'index'])->name('de
 Route::get('/departamentos/create', [DepartamentoController::class, 'create'])->name('departamentos.create');
 
 Route::post('/departamentos/create.store', [DepartamentoController::class, 'store'])->name('departamentos.store');
+
+
+
+Route::put('/departamentos/{departamento}', [DepartamentoController::class, 'update'])->name('departamentos.update');
+Route::get('/departamentos/{departamento}/edit', [DepartamentoController::class, 'edit'])->name('departamentos.edit');
 
