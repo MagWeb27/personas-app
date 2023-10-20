@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Pais;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class PaisController extends Controller
 {
@@ -21,7 +22,10 @@ class PaisController extends Controller
      */
     public function create()
     {
-        //
+        $departamentos = DB::table('tb_departamento')
+            ->orderBy('depa_nomb')
+            ->get();
+        return view('paises.create', ['departamentos' => $departamentos]);
     }
 
     /**
@@ -29,7 +33,15 @@ class PaisController extends Controller
      */
     public function store(Request $request)
     {
-        //
+            Pais::create([
+            'pais_codi' => $request->codigo,
+            'pais_nomb' => $request->name,
+            'pais_capi' => $request->capital,
+            'depa_codi' =>$request->departamento
+        ]);
+
+        session()->flash('mensaje', 'Se ha creado un nuevo registro correctamente.');
+        return redirect()->route('paises.index');
     }
 
     /**

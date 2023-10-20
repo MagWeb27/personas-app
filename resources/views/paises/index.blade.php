@@ -18,7 +18,7 @@
                 <p class="font-medium text-4xl drop-shadow-lg">Lista de Paises</p>
             </div>
             <div class="flex justify-start ml-20">
-                <a href="#"
+                <a href="{{ route('paises.create') }}"
                     class="flex items-center mr-2 w-[80px] text-white p-2 mt-2 rounded bg-green-400 hover:bg-green-500 shadow-lg">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                         stroke="currentColor" class="w-6 h-6">

@@ -25,6 +25,7 @@
             <div class="ml-5 pb-5">
                 <p>
                     Miguel Angel Martinez Gomez
+                    Miguel Angel Varela Cataño
                 </p>
             </div>
             <div class="ml-5">
