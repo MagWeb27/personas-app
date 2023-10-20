@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ComunaController;
+use App\Http\Controllers\DepartamentoController;
 use App\Http\Controllers\MunicipioController;
 use Illuminate\Support\Facades\Route;
 
@@ -32,4 +33,4 @@ Route::get('/comunas/{comuna}/edit', [ComunaController::class, 'edit'])->name('c
 
 //RUTAS DE MUNICIPIOS
 
-Route::get('/municipios', [MunicipioController::class, 'index'])->name('municipios.index');
+Route::get('/departamentos', [DepartamentoController::class, 'index'])->name('departamentos.index');

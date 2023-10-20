@@ -36,7 +36,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="#" class="text-white hover:bg-slate-500 transition duration-100 rounded">
+                            <a href="{{ route('departamentos.index') }}" class="text-white hover:bg-slate-500 transition duration-100 rounded">
                                 Departamentos
                             </a>
                         </li>

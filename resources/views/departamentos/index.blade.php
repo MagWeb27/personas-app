@@ -25,17 +25,17 @@
                 <thead class="bg-slate-400">
                     <tr class="text-white">
                         <th class="py-2 px-4 border-b">Codigo</th>
-                        <th class="py-2 px-4 border-b">Comuna</th>
-                        <th class="py-2 px-4 border-b">Municipio</th>
+                        <th class="py-2 px-4 border-b">Departamento</th>
+                        <th class="py-2 px-4 border-b">Pais</th>
                         <th class="py-2 px-4 border-b">Acciones</th>
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($municipios as $municipio)
+                    @foreach ($departamentos as $departamento)
                         <tr>
-                            <th scope="row">{{ $municipio->muni_codi }}</th>
-                            <td class="py-2 px-4 border-b text-center">{{ $municipio->muni_nomb }}</td>
-                            <td class="py-2 px-4 border-b text-center">{{ $municipio->depa_codi }}</td>
+                            <th scope="row">{{ $departamento->depa_codi }}</th>
+                            <td class="py-2 px-4 border-b text-center">{{ $departamento->depa_nomb }}</td>
+                            <td class="py-2 px-4 border-b text-center">{{ $departamento->pais_codi }}</td>
                             <td class="py-2 px-4 border-b flex items-center justify-center">
 
                                 <a href="#"

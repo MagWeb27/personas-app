@@ -11,7 +11,6 @@ class MunicipioController extends Controller
      */
     public function index()
     {
-        //
     }
 
     /**

@@ -8,4 +8,20 @@ use Illuminate\Database\Eloquent\Model;
 class Departamento extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'depa_codi',
+        'depa_nomb',
+        'pais_codi'
+    ];
+
+    use HasFactory;
+    protected $table = 'tb_departamento';
+    protected $primaryKey = 'depa_codi';
+    public $timestamps = false;
+
+    public function pais()
+    {
+        return $this->hasOne(Pais::class);
+    }
 }
