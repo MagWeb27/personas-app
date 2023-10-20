@@ -21,7 +21,6 @@ Route::get('/', function () {
 });
 
 //RUTAS DE COMUNAS
-
 Route::get('/comunas', [ComunaController::class, 'index'])->name('comunascrud');
 Route::get('/comunas/create', [ComunaController::class, 'create'])->name('crearComuna');
 
@@ -32,7 +31,6 @@ Route::put('/comunas/{comuna}', [ComunaController::class, 'update'])->name('comu
 Route::get('/comunas/{comuna}/edit', [ComunaController::class, 'edit'])->name('comunas.edit');
 
 //RUTAS DE MUNICIPIOS
-
 Route::get('/departamentos', [DepartamentoController::class, 'index'])->name('departamentos.index');
 Route::get('/departamentos/create', [DepartamentoController::class, 'create'])->name('departamentos.create');
 

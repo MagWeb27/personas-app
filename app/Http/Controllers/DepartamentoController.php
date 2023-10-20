@@ -38,6 +38,7 @@ class DepartamentoController extends Controller
             'pais_codi' =>$request->pais
         ]);
 
+        session()->flash('mensaje', 'Se ha creado un nuevo registro correctamente.');
         return redirect()->route('departamentos.index');
     }
 
@@ -69,12 +70,14 @@ class DepartamentoController extends Controller
         $departamento = departamento::find($depa_codi);
         $departamento->depa_nomb = $request->name;
         $departamento->depa_codi = $request->departamento;
+        $departamento->pais_codi = $request->pais;
         $departamento->save();
 
         $departamentos = DB::table('tb_departamento')
             ->join('tb_pais', 'tb_departamento.pais_codi', '=', 'tb_pais.pais_codi')
             ->select('tb_departamento.*', 'tb_pais.pais_nomb')
             ->get();
+        session()->flash('mensaje', 'El campo se actualizo correctamente.');
         return view('departamentos.index', ['departamentos' => $departamentos]);
     }
 
@@ -90,7 +93,7 @@ class DepartamentoController extends Controller
             ->join('tb_pais', 'tb_departamento.pais_codi', '=', 'tb_pais.pais_codi')
             ->select('tb_departamento.*', 'tb_pais.pais_nomb')
             ->get();
-        session()->flash('mensaje', 'El campo se eliminó correctamente.');
+        session()->flash('mensaje', 'El campo se elimino correctamente.');
         return view('departamentos.index', ['departamentos' => $departamentos]);
     }
 }

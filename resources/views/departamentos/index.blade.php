@@ -6,13 +6,14 @@
 
 @section('contenido')
     <div class="overflow-x-auto">
-        @if (session('mensaje'))
-            <div class="bg-green-500 text-white font-medium text-lg h-[45px] rounded flex items-center justify-between px-4">
-                <span>{{ session('mensaje') }}</span>
-                <button onclick="this.parentElement.style.display='none'" class="font-medium text-white">&times;</button>
-            </div>
-        @endif
         <div class="flex flex-col gap-4 justify-center mx-auto">
+            @if (session('mensaje'))
+                <div
+                    class="bg-green-500 text-white font-medium text-lg h-[45px] rounded flex items-center justify-between px-4">
+                    <span>{{ session('mensaje') }}</span>
+                    <button onclick="this.parentElement.style.display='none'" class="font-medium text-white">&times;</button>
+                </div>
+            @endif
             <div class="flex justify-start mb-2 ml-20">
                 <p class="font-medium text-4xl drop-shadow-lg">Lista de municipios</p>
             </div>
