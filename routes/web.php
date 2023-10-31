@@ -1,11 +1,14 @@
 <?php
 
-use App\Http\Controllers\ComunaController;
-use App\Http\Controllers\DepartamentoController;
-use App\Http\Controllers\MunicipioController;
-use App\Http\Controllers\PaisController;
 use App\Models\Municipio;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PaisController;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\ComunaController;
+use App\Http\Controllers\LogOutController;
+use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\MunicipioController;
+use App\Http\Controllers\DepartamentoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,6 +24,15 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('index');
 });
+
+//RUTAS DE AUTENTICACION
+Route::get('/register', [RegisterController::class, 'index'])->name('register');
+Route::post('/register', [RegisterController::class, 'store']);
+
+Route::get('/login', [LoginController::class, 'index'])->name('login');
+Route::post('/login', [LoginController::class, 'store']);
+
+Route::post('/logout', [LogOutController::class, 'store'])->name('logout');
 
 //RUTAS DE COMUNAS
 Route::get('/comunas', [ComunaController::class, 'index'])->name('comunascrud');

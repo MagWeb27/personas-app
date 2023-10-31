@@ -12,43 +12,64 @@
 
 <body class="bg-gray-100">
     <header class="p-5 border-b bg-gray-800 shadow">
-        <nav>
-            <div class="container mx-auto">
-                <div class="flex items-center justify-between">
-                    <div class="text-white">
-                        <a href="/">
-                            <h1 class="text-3xl font-bold text-white">
-                                Laboratiorio CRUD
-                            </h1>
-                        </a>
-                    </div>
+        @auth
+            <nav>
+                <div class="container mx-auto">
+                    <div class="flex items-center justify-between">
+                        <div class="text-white">
+                            <a href="/">
+                                <h1 class="text-3xl font-bold text-white">
+                                    Laboratiorio CRUD
+                                </h1>
+                            </a>
+                        </div>
 
-                    <!-- Menú de Navegación -->
-                    <ul class="flex items-center space-x-4">
-                        <li>
-                            <a href="{{ route('comunascrud') }}" class="text-white hover:bg-slate-500 transition duration-100 rounded ">
-                                Comunas
-                            </a>
-                        </li>
-                        <li>
-                            <a href="{{ route('municipios.index') }}" class="text-white hover:bg-slate-500 transition duration-100 rounded">
-                                Municipios
-                            </a>
-                        </li>
-                        <li>
-                            <a href="{{ route('departamentos.index') }}" class="text-white hover:bg-slate-500 transition duration-100 rounded">
-                                Departamentos
-                            </a>
-                        </li>
-                        <li>
-                            <a href="{{ route('paises.index') }}" class="text-white hover:bg-slate-500 transition duration-100 rounded">
-                                País
-                            </a>
-                        </li>
-                    </ul>
+                        <!-- Menú de Navegación -->
+                        <ul class="flex items-center space-x-4">
+                            <li>
+                                <a href="{{ route('comunascrud') }}"
+                                    class="text-white hover:bg-slate-500 transition duration-100 rounded ">
+                                    Comunas
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{ route('municipios.index') }}"
+                                    class="text-white hover:bg-slate-500 transition duration-100 rounded">
+                                    Municipios
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{ route('departamentos.index') }}"
+                                    class="text-white hover:bg-slate-500 transition duration-100 rounded">
+                                    Departamentos
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{ route('paises.index') }}"
+                                    class="text-white hover:bg-slate-500 transition duration-100 rounded">
+                                    País
+                                </a>
+                            </li>
+                            <form method="POST" action="{{ route('logout') }}">
+                                @csrf
+                                <button type="submit" class="font-bold uppercase text-white text-sm"
+                                    href="{{ route('logout') }}">
+                                    Cerrar sesión
+                                </button>
+                            </form>
+                        </ul>
+                    </div>
                 </div>
-            </div>
-        </nav>
+            </nav>
+        @endauth
+
+        @guest
+            <nav class="flex gap-2 justify-end items-center">
+                <a class="font-bold uppercase text-white text-sm" href="{{ route('login') }}">Login</a>
+                <h1 class="font-bold uppercase text-white text-sm">|</h1>
+                <a class="font-bold uppercase text-white text-sm" href="{{ route('register') }}">Crear cuenta</a>
+            </nav>
+        @endguest
     </header>
 
     <main class="container mx-auto mt-10">
