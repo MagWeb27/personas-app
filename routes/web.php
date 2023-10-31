@@ -35,6 +35,7 @@ Route::post('/login', [LoginController::class, 'store']);
 Route::post('/logout', [LogOutController::class, 'store'])->name('logout');
 
 //RUTAS DE COMUNAS
+Route::middleware('auth')->group(function () {
 Route::get('/comunas', [ComunaController::class, 'index'])->name('comunascrud');
 Route::get('/comunas/create', [ComunaController::class, 'create'])->name('crearComuna');
 
@@ -72,3 +73,4 @@ Route::post('/paises/create.store', [PaisController::class, 'store'])->name('pai
 
 Route::put('/paises/{pais}', [PaisController::class, 'update'])->name('paises.update');
 Route::get('/paises/{pais}/edit', [PaisController::class, 'edit'])->name('paises.edit');
+});
