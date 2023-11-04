@@ -17,8 +17,8 @@
                     <label for="email" class="mb-2 block uppercase text-gray-500 font-bold">Email</label>
                     <input type="email" id="email" name="email" placeholder="Tu email"
                         class="border p-3  w-full rounded-lg @error('email') border-red-500
-                        @enderror"
-                        value="{{ old('email') }}" />
+                        @enderror hover:border-blue-500 focus:outline-none focus:ring focus:border-blue-500"
+                        value="{{ old('email') }} "  />
                     @error('email')
                         <p class="text-red-500">{{ $message }}</p>
                     @enderror
@@ -27,7 +27,7 @@
                     <label for="password" class="mb-2 block uppercase text-gray-500 font-bold">Password</label>
                     <input type="password" id="password" name="password" placeholder="Tu contraseña"
                         class="border p-3 w-full rounded-lg @error('password') border-red-500
-                        @enderror" />
+                        @enderror hover:border-blue-500 focus:outline-none focus:ring focus:border-blue-500" />
                     @error('password')
                         <p class="text-red-500">{{ $message }}</p>
                     @enderror

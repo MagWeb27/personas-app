@@ -13,7 +13,7 @@
                     <label for="name" class="mb-2 block uppercase text-gray-500 font-bold">Name</label>
                     <input type="text" id="name" name="name" placeholder="Tu nombre"
                         class="border p-3  w-full rounded-lg @error('name') border-red-500
-                    @enderror"
+                    @enderror hover:border-blue-500 focus:outline-none focus:ring focus:border-blue-500"
                         value="{{ old('name') }}" />
                     @error('name')
                         <p class="text-red-500">{{ $message }}</p>
@@ -23,7 +23,7 @@
                     <label for="username" class="mb-2 block uppercase text-gray-500 font-bold">Username</label>
                     <input type="text" id="username" name="username" placeholder="Tu nombre de usuario"
                         class="border p-3  w-full rounded-lg @error('username') border-red-500
-                        @enderror"
+                        @enderror hover:border-blue-500 focus:outline-none focus:ring focus:border-blue-500"
                             value="{{ old('username') }}" />
                     @error('username')
                         <p class="text-red-500">{{ $message }}</p>
@@ -33,7 +33,7 @@
                     <label for="email" class="mb-2 block uppercase text-gray-500 font-bold">Email</label>
                     <input type="email" id="email" name="email" placeholder="Tu email"
                         class="border p-3  w-full rounded-lg @error('email') border-red-500
-                        @enderror"
+                        @enderror hover:border-blue-500 focus:outline-none focus:ring focus:border-blue-500"
                             value="{{ old('email') }}" />
                     @error('email')
                         <p class="text-red-500">{{ $message }}</p>
@@ -43,7 +43,7 @@
                     <label for="password" class="mb-2 block uppercase text-gray-500 font-bold">Password</label>
                     <input type="password" id="password" name="password" placeholder="Tu contraseña"
                         class="border p-3 w-full rounded-lg @error('password') border-red-500
-                        @enderror" />
+                        @enderror hover:border-blue-500 focus:outline-none focus:ring focus:border-blue-500" />
                     @error('password')
                         <p class="text-red-500">{{ $message }}</p>
                     @enderror
@@ -52,7 +52,7 @@
                     <label for="password_confirmation" class="mb-2 block uppercase text-gray-500 font-bold">Confirm
                         Password</label>
                     <input type="password" id="password_confirmation" name="password_confirmation"
-                        placeholder="Confirma tu contraseña" class="border p-3  w-full rounded-lg" />
+                        placeholder="Confirma tu contraseña" class="border p-3  w-full rounded-lg hover:border-blue-500 focus:outline-none focus:ring focus:border-blue-500" />
                 </div>
 
                 <input type="submit" value="Crear cuenta"
