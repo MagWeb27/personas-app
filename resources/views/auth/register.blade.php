@@ -57,7 +57,7 @@
 
                 <input type="submit" value="Crear cuenta"
                     class="bg-sky-600 hover:bg-sky-700 transition-colors cursor-pointer uppercase font-bold w-full p-3 text-white rounded-lg">
-                    <h2 class="text-center pt-4 text-gray-500">¿Ya tienes una cuenta aún? <a href="{{ route('login') }}" class="text-blue-500 hover:text-blue-700 hover:underline hover:underline-offset-1">Inicia sesión</a></h2>
+                    <h2 class="text-center pt-4 text-gray-500">¿Ya tienes una cuenta? <a href="{{ route('login') }}" class="text-blue-500 hover:text-blue-700 hover:underline hover:underline-offset-1">Inicia sesión</a></h2>
             </form>
         </div>
     </div>
