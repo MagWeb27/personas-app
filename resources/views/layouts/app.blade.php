@@ -28,25 +28,25 @@
                         <ul class="flex items-center space-x-4">
                             <li>
                                 <a href="{{ route('comunascrud') }}"
-                                    class="text-white hover:bg-slate-500 transition duration-100 rounded ">
+                                    class="{{ request()->routeIs('comunascrud') ? 'nav-select' : 'nav-unselect' }} ">
                                     Comunas
                                 </a>
                             </li>
                             <li>
                                 <a href="{{ route('municipios.index') }}"
-                                    class="text-white hover:bg-slate-500 transition duration-100 rounded">
+                                    class="{{ request()->routeIs('municipios.index') ? 'nav-select' : 'nav-unselect' }}">
                                     Municipios
                                 </a>
                             </li>
                             <li>
                                 <a href="{{ route('departamentos.index') }}"
-                                    class="text-white hover:bg-slate-500 transition duration-100 rounded">
+                                    class="{{ request()->routeIs('departamentos.index') ? 'nav-select' : 'nav-unselect' }}">
                                     Departamentos
                                 </a>
                             </li>
                             <li>
                                 <a href="{{ route('paises.index') }}"
-                                    class="text-white hover:bg-slate-500 transition duration-100 rounded">
+                                    class="{{ request()->routeIs('paises.index') ? 'nav-select' : 'nav-unselect' }}">
                                     País
                                 </a>
                             </li>
