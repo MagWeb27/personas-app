@@ -26,7 +26,7 @@ use App\Http\Controllers\IndexController;
 // });
 
 //RUTA DE PAGINA PRINCIPAL
-Route::get('/index', [IndexController::class, 'index'])->name('index');
+Route::get('/', [IndexController::class, 'index'])->name('index');
 
 //RUTAS DE AUTENTICACION
 Route::get('/register', [RegisterController::class, 'index'])->name('register');
