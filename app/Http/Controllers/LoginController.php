@@ -25,6 +25,6 @@ class LoginController extends Controller
             return back()->with('mensaje', 'Credenciales incorrectas');
         }
 
-        return redirect()->route('comunascrud', auth()->user()->username);
+        return redirect()->route('index', auth()->user()->username);
     }
 }

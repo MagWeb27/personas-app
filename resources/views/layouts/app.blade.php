@@ -66,9 +66,11 @@
         @guest
             <nav class="flex gap-2 justify-between items-center">
                 {{-- <div class="flex justify-start"> --}}
-                <h1 class="text-3xl font-bold text-white">
-                    Laboratiorio CRUD
-                </h1>
+                <a href="/">
+                    <h1 class="text-3xl font-bold text-white">
+                        Laboratiorio CRUD
+                    </h1>
+                </a>
                 {{-- </div> --}}
                 <ul class="flex items-center space-x-4">
                     <a class="font-bold uppercase text-white text-sm" href="{{ route('login') }}">Login</a>

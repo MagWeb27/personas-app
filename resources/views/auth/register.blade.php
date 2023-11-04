@@ -47,7 +47,7 @@
                     @error('password')
                         <p class="text-red-500">{{ $message }}</p>
                     @enderror
-                </div>
+                </div> 
                 <div class="mb-5">
                     <label for="password_confirmation" class="mb-2 block uppercase text-gray-500 font-bold">Confirm
                         Password</label>

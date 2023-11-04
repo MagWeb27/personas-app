@@ -1,6 +1,5 @@
 <?php
 
-use App\Models\Municipio;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PaisController;
 use App\Http\Controllers\LoginController;
@@ -9,6 +8,7 @@ use App\Http\Controllers\LogOutController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\MunicipioController;
 use App\Http\Controllers\DepartamentoController;
+use App\Http\Controllers\IndexController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,9 +21,12 @@ use App\Http\Controllers\DepartamentoController;
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
+// Route::get('/', function () {
+//     return view('index');
+// });
+
+//RUTA DE PAGINA PRINCIPAL
+Route::get('/index', [IndexController::class, 'index'])->name('index');
 
 //RUTAS DE AUTENTICACION
 Route::get('/register', [RegisterController::class, 'index'])->name('register');
